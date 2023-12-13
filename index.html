@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- script-by_Rayan -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>-multiplication-table-</title>
+    <link rel="website icon" href="/img_ryn/PPLG1.jpg" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        text-align: center;
+        background: url(/img_ryn/backg.jpg);
+      }
+      header {
+        background: transparent;
+        color: black;
+        text-align: center;
+        text-shadow: 3px 0px 1px white;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 20px 0px black;
+      }
+
+      h3 {
+        color: white;
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        filter: drop-shadow(3px 5px 8px black);
+      }
+
+      .perkalian {
+        display: inline-block;
+        border: 1px solid black;
+        width: 95%;
+        filter: blur(8px) grayscale(1);
+        transition: 0.8s;
+        text-align: center;
+        font-size: 16.5px;
+        border: none;
+        padding: 10px;
+        background: transparent;
+        border-radius: 60px;
+        box-shadow: 5px 5px 20px 0px black;
+      }
+      .perkalian:hover {
+        filter: blur(0) grayscale(0);
+      }
+      #Piramida {
+        display: inline-block;
+        font-size: 12px;
+      }
+      footer {
+        background: transparent;
+        text-shadow: 1.7px 0px 1px black;
+        color: rgb(236, 236, 236);
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 20px 0px black;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        border: 1px solid #333;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Perkalian</h1>
+    </header>
+    <!-- TASK HAH -->
+    <div id="Piramida">
+    <script>
+      //variabel
+      var JumRows = 16;
+      var piramida = "";
+      //spasi
+      for (var x = 1; x <= JumRows; x++) {
+        for (var y = 0; y < JumRows - x; y++) {
+          piramida += " ";
+        }
+        //add HAH
+        for (var r = 0; r < 2 * x - 1; r++) {
+          piramida += "HAH";
+          if (r < 2 * x - 2) {
+            (piramida += "&nbsp;"), "<br>"; //spasi habis HAH
+          }
+        }
+        piramida += "<br>";
+      }
+      document.write("<div id='piramida'>" + piramida + "</div>");
+    </script>
+    </div>
+    <br/><br/>
+
+    <!-- Task Perkalian 1-10 -->
+    <h3>Perkalian 1-100</h3>
+    <br/>
+    <div class="perkalian">
+      <table id="table-perkalian"></table>
+      <script>
+        document.write("<table border='1'>");
+
+        for (let x = 1; x <= 100; x++) {
+          document.write("<tr>");
+          for (let y = 1; y <= 10; y++) {
+            document.write(`<td>${x} x ${y} = ${x * y}</td>`);
+          }
+          document.write("</tr>");
+        }
+
+        document.write("</table>");
+      </script>
+    </div>
+    <footer>@byRayan</footer>
+  </body>
+</html>
